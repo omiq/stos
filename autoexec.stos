@@ -1,0 +1,4 @@
+key(2)="load "+chr$(34)+"c:\mystosprogram\stos\build.asc`"+chr$(34)+"`"
+print "loading compiler.."
+dir$=drive$+":\stos\acb"
+put key "accload"+chr$(34)+"compiler.acb"+chr$(34)+":mode 1:colour0,0:dir$=drive$+"+chr$(34)+":\"+chr$(34)+":new`"

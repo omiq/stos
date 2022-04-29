@@ -1,0 +1,16 @@
+cls : mode 0 : curs off : hide on
+colour 11,$0
+load "c:\sprite.mbk"
+k$="" : q=0 : x=100 : y=100
+while q=0
+k$=inkey$
+if k$ = "q" then q=1
+if k$ = "a" then x=x-1
+if k$ = "d" then x=x+1
+if k$ = "w" then y=y-1
+if k$ = "s" then y=y+1
+locate 0,0
+print scancode;
+sprite 1,x,y,1
+wend
+default

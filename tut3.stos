@@ -1,0 +1,6 @@
+cls : mode 0 : curs off : hide on 
+colour 11,$0
+load "c:\sprite.mbk"
+sprite 1,100,100,1
+wait key 
+default 

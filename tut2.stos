@@ -1,0 +1,9 @@
+reserve as screen 2
+cls : mode 0 : hide on : curs off
+load "c:\makerhax.pi1",2
+get palette (2)
+screen copy 2 to physic
+wait key 
+def scroll 1,0,0 to 319,199,8,0
+for x=1 to 40 : scroll 1 : wait vbl : next x
+default

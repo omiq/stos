@@ -1,0 +1,14 @@
+cls : mode 0 : curs off : hide on
+colour 11,$0
+load "c:\sprite.mbk"
+j=0 : q=0 : x=100 : y=100
+while q=0
+j=joy
+if fire then q=1
+if jleft then x=x-1
+if jright then x=x+1
+if jup then y=y-1
+if jdown then y=y+1
+sprite 1,x,y,1
+wend
+default
