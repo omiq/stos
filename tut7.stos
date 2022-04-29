@@ -1,0 +1,43 @@
+10 cls : mode 0 : curs off : hide on
+20 colour 11,$0
+30 load "c:\sprite.mbk"
+40 ink 0
+50 bar 0,0 to 319,40
+60 wx=0 : wy=0
+70 for iy=0 to 5
+80 for ix=0 to 9
+90 sprite 2,wx,wy,2
+100 put sprite 2
+110 wx=wx+32
+120 wait vbl
+130 next ix
+140 wx=0
+150 wy=wy+32
+160 next iy
+170 :
+180 k$="" : q=0 : x=100 : y=100
+190 bx=0 : by=32 : tx=0
+200 while q=0
+210 inc tx
+220 if tx < 10 then goto 290
+230 if bx>x then dec bx
+240 if bx<x then inc bx
+250 if by>y then dec by
+260 if by<y then inc by
+270 tx=0
+280 :
+290 rem @player
+300 k$=inkey$
+310 if k$ = "q" then q=1
+320 if scancode = 75 then x=x-1
+330 if scancode = 77 then x=x+1
+340 if scancode = 72 then y=y-1
+350 if scancode = 80 then y=y+1
+360 if collide(1,16,16) = 8 then goto 420
+370 sprite 1,x,y,1
+380 sprite 3,bx,by,3
+390 wait vbl
+400 wend
+410 :
+420 rem @over
+430 default
